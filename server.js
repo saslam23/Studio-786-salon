@@ -5,12 +5,11 @@ const request = require("request");
 const cors = require("cors");
 const sendMail = require("./mail");
 const path = require("path");
-const forceSsl = require("force-ssl-heroku");
+
 
 
 
 const app = express();
-app.use(forceSsl);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
