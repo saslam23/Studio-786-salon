@@ -4,8 +4,6 @@ const request = require("request");
 const cors = require("cors");
 const sendMail = require("./mail");
 const path = require("path");
-const http = require("http");
-const enforce = require("express-sslify");
 
 const app = express();
 
@@ -13,7 +11,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-app.use(enforce.HTTPS())
 const PORT = process.env.PORT || 8080;
 
 app.post("/signup", (req, res) => {
@@ -86,6 +83,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 
-http.createServer(app).listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Successfully running server on port ${PORT}`);
 });
