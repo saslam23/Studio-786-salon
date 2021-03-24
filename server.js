@@ -4,15 +4,16 @@ const request = require("request");
 const cors = require("cors");
 const sendMail = require("./mail");
 const path = require("path");
-const sslRedirect = require("heroku-ssl-redirect");
-
-
+const http = require("http");
+const enforce = require("express-sslify");
 
 const app = express();
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-app.use(()=>{sslRedirect()});
+app.use(enforce.HTTPS())
 const PORT = process.env.PORT || 8080;
 
 app.post("/signup", (req, res) => {
@@ -85,6 +86,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 
-app.listen(PORT, () => {
+http.createServer(app).listen(PORT, () => {
   console.log(`Successfully running server on port ${PORT}`);
 });
