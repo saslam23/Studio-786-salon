@@ -74,7 +74,7 @@ const hours = [
     },
     {
         day:'Saturday',
-        time:'11–7PM'
+        time:'11–6PM'
     },
     {
         day:'Sunday',
