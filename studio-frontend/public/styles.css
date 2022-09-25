@@ -1,3 +1,6 @@
+html *{
+  font-family: 'Poppins', sans-serif;
+}
 html,
 body {
   padding: 0;
@@ -275,23 +278,16 @@ h3 {
 }
 
 h4 {
-  font-family: DIN;
+
   padding-left: 35px;
 
 }
 
 
-li {
-  font-family: DIN;
-}
 
 p {
-  font-family: DIN;
-  font-size: 16pt;
-}
 
-th {
-  font-family: DIN;
+  font-size: 14pt;
 }
 
 
@@ -320,7 +316,7 @@ th {
 
 @font-face {
   src: url(fonts/DINPro-Black.ttf);
-  font-family: DIN;
+
 }
 
 @font-face {
