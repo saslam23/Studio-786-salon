@@ -391,9 +391,10 @@ p {
 @media only screen and (max-width:950px) {
 
   .appointmentButton{
-    position:absolute;
+    position:fixed;
     display:flex;
     right:3%;
+    top:2%;
     font-size:15px;
     align-items:center;
     padding:1rem;
