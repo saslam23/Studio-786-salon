@@ -1,9 +1,11 @@
 require('dotenv').config();
+const sslRedirect = require("heroku-ssl-redirect");
 const express = require("express");
 const request = require("request");
 const cors = require("cors");
 const sendMail = require("./mail");
 const path = require("path");
+
 
 const app = express();
 
@@ -11,6 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
+app.use(sslRedirect());
 const PORT = process.env.PORT || 8080;
 
 app.post("/signup", (req, res) => {
